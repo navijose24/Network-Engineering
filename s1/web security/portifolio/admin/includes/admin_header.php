@@ -22,7 +22,7 @@ $flash = get_flash();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= e($pageTitle ?? 'Admin Console') ?> // tob.zico</title>
+    <title><?= e($pageTitle ?? 'Admin Console') ?> // navaneetha</title>
     
     <!-- Design Tokens & Admin Stylesheet -->
     <link rel="stylesheet" href="/assets/css/admin.css">
@@ -37,7 +37,7 @@ $flash = get_flash();
     <aside class="admin-sidebar">
         <div class="sidebar-header">
             <div class="sidebar-brand">
-                <span>tob.zico</span>
+                <span>navaneetha</span>
                 <span style="font-size: 0.72rem; color: var(--clr-terracotta); border: 1px solid var(--clr-terracotta); padding: 2px 6px;">
                     ROOT
                 </span>

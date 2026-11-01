@@ -34,7 +34,7 @@ $settings = get_site_settings();
             <div class="footer-grid">
                 <div>
                     <div style="font-family: var(--font-pixel); font-size: 1.3rem; margin-bottom: 14px; color: var(--clr-sand);">
-                        tob.zico <span style="font-size: 0.75rem; color: var(--clr-terracotta);">// [SYS.01]</span>
+                        navaneetha <span style="font-size: 0.75rem; color: var(--clr-terracotta);">// [SYS.01]</span>
                     </div>
                     <p style="font-size: 0.92rem; color: var(--clr-stone); max-width: 440px; margin-bottom: 16px;">
                         Engineering resilient systems at the nexus of AI, blockchain, and real-world infrastructure. Structured with zero bloat and intentional code.
@@ -54,8 +54,7 @@ $settings = get_site_settings();
                         <li><a href="/#projects" style="color: #C7BAAE;">&gt; 02. Project Index</a></li>
                         <li><a href="/#achievements" style="color: #C7BAAE;">&gt; 04. Honors & Awards</a></li>
                         <li><a href="/#articles" style="color: #C7BAAE;">&gt; 06. Technical Articles</a></li>
-                        <li><a href="/#creative" style="color: #C7BAAE;">&gt; 07. Visual Laboratory</a></li>
-                        <li><a href="/#contact" style="color: #C7BAAE;">&gt; 08. Transmit Message</a></li>
+                        <li><a href="/#contact" style="color: #C7BAAE;">&gt; 07. Transmit Message</a></li>
                     </ul>
                 </div>
 
@@ -73,7 +72,6 @@ $settings = get_site_settings();
                         <?php if (!empty($profile['instagram'])): ?>
                             <li><a href="https://<?= e(ltrim($profile['instagram'], 'https://')) ?>" target="_blank" rel="noopener noreferrer" style="color: #C7BAAE;">&gt; Instagram: @navaneetha_jose</a></li>
                         <?php endif; ?>
-                        <li><a href="/admin/login.php" style="color: var(--clr-terracotta);">&gt; Restricted Console</a></li>
                     </ul>
                 </div>
             </div>
@@ -83,7 +81,7 @@ $settings = get_site_settings();
                     &copy; <?= date('Y') ?> <?= e($profile['name']) ?>. <?= e($settings['footer_text'] ?? 'BUILT OF 0s AND 1s.') ?>
                 </div>
                 <div>
-                    <span>STATUS: 200 OK</span> // <span>LATENCY: 14MS</span>
+                    <span>STATUS: 200 OK</span> // <span>LATENCY: 14MS</span> // <a href="/admin/login.php" style="color: var(--clr-stone); opacity: 0.45; text-decoration: none; font-size: 0.75rem;" title="Admin Gateway">[ADMIN]</a>
                 </div>
             </div>
         </div>

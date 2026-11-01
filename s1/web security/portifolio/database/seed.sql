@@ -9,8 +9,8 @@ USE `portfolio_db`;
 -- Email: admin@portfolio.local
 -- Password: Admin@12345 (BCRYPT hash)
 INSERT INTO `admins` (`id`, `username`, `email`, `password_hash`)
-VALUES (1, 'admin', 'admin@portfolio.local', '$2y$10$wT5gWd992e59y2t53i84g.xMh/631/iA4sV2wWkZz2m7mQ5JdE3eC')
-ON DUPLICATE KEY UPDATE `username` = VALUES(`username`);
+VALUES (1, 'admin', 'admin@portfolio.local', '$2y$12$UmsUTKjGEZEZ1C/nRyyJM.ojO0u4vLMJNrxM5f0OQu7EdPN6luM0u')
+ON DUPLICATE KEY UPDATE `username` = VALUES(`username`), `password_hash` = VALUES(`password_hash`);
 
 -- 2. Profile
 INSERT INTO `profile` (`id`, `name`, `tagline`, `intro`, `email`, `phone`, `linkedin`, `github`, `instagram`, `avatar`)
@@ -24,9 +24,9 @@ VALUES (
     'linkedin.com/in/navaneetha-jose',
     'github.com/navijose24',
     'instagram.com/navaneetha_jose',
-    '/Life/1.png'
+    '/uploads/avatars/pixel_human.png'
 )
-ON DUPLICATE KEY UPDATE `name` = VALUES(`name`);
+ON DUPLICATE KEY UPDATE `name` = VALUES(`name`), `avatar` = VALUES(`avatar`);
 
 -- 3. Projects
 INSERT INTO `projects` (`id`, `title`, `subtitle`, `description`, `detailed_description`, `category`, `image`, `video`, `github`, `link`, `is_featured`, `display_order`, `is_published`)
@@ -69,22 +69,7 @@ VALUES
 (6, 'MediAlert+', 'Full-Stack Medication Reminder & Alert System',
  'Built a full-stack web and notification system that allows nurses to create and manage patient medication schedules, while patients automatically receive timely alerts via SMS, with confirmation tracking.',
  'MediAlert+ bridges the communication gap between healthcare providers and patients regarding medication adherence. This full-stack solution allows nurses to input complex medication schedules into a centralized dashboard. The system then automates the delivery of SMS reminders to patients at precise times. Crucially, it includes a feedback loop where patients can confirm intake, updating the nurse\'s dashboard in real-time.',
- 'Full Stack', '/project-medialert.jpg', '/project/medialert.mp4', NULL, '/project/medialert.mp4', 0, 8, 1),
-
-(7, 'SEO-analyser', 'SEO Quality Analysis Tool',
- 'An SEO Analyzer is a tool that checks your website or webpage for Search Engine Optimization (SEO) quality—helping you understand how well your content will rank in search engines like Google.',
- 'The SEO Analyser is a comprehensive web tool designed to audit websites for search engine optimization best practices. It parses HTML content to check for critical elements like meta tags, alt attributes, heading hierarchies, and broken links. The tool provides a detailed score and actionable recommendations to improve page ranking.',
- 'Web Development', '/project-seo.jpg', NULL, 'https://github.com/navijose24/SEO-analyser', 'https://github.com/navijose24/SEO-analyser', 0, 9, 1),
-
-(8, 'park-voting-system', 'Park Information Management System',
- 'A Python-based system for extracting and managing park information from HTML sources. This project processes park data and converts it into a structured JSON format for further use in a voting system.',
- 'This system automates the extraction and structuring of unstructured park data from various web sources. Using Python\'s scraping libraries, it aggregates information such as park amenities, location, and user reviews. The data is then normalized and exported as structured JSON.',
- 'Web Development', '/project-park.jpg', NULL, 'https://github.com/navijose24/park-voting-system-', 'https://github.com/navijose24/park-voting-system-', 0, 10, 1),
-
-(9, 'Flappy Bird Clone', '2D Game Development',
- 'Created a simple interactive game using Unity with custom physics and responsive controls.',
- 'A faithful recreation of the classic Flappy Bird game, developed to explore the fundamentals of 2D game physics and input handling in Unity. This project involves custom C# scripting to manage bird mechanics, procedural pipe generation, and collision detection.',
- 'Game Dev', '/project-game.jpg', NULL, 'https://github.com/navijose24/Flappy-Bird-Clone', 'https://github.com/navijose24/Flappy-Bird-Clone', 0, 11, 1)
+ 'Full Stack', '/project-medialert.jpg', '/project/medialert.mp4', NULL, '/project/medialert.mp4', 0, 8, 1)
 ON DUPLICATE KEY UPDATE `title` = VALUES(`title`);
 
 -- Project Technologies
@@ -96,10 +81,7 @@ INSERT INTO `project_technologies` (`project_id`, `name`) VALUES
 (3, 'Python'), (3, 'Machine Learning'), (3, 'Decision Tree'), (3, 'KNN'),
 (4, 'Three.js'), (4, 'React'), (4, 'Python'), (4, 'NASA Data'), (4, 'LSTM'), (4, 'ARIMA'),
 (5, 'Python'), (5, 'Tesseract OCR'), (5, 'OpenCV'), (5, 'Regex'), (5, 'JSON'),
-(6, 'React'), (6, 'TypeScript'), (6, 'Python'), (6, 'Node.js'), (6, 'Docker'), (6, 'SMS APIs'),
-(7, 'JavaScript'), (7, 'HTML'), (7, 'CSS'),
-(8, 'Python'), (8, 'HTML'), (8, 'JSON'),
-(9, 'Unity'), (9, 'C#');
+(6, 'React'), (6, 'TypeScript'), (6, 'Python'), (6, 'Node.js'), (6, 'Docker'), (6, 'SMS APIs');
 
 -- Project Bullets
 INSERT INTO `project_bullets` (`project_id`, `bullet`, `display_order`) VALUES
@@ -160,7 +142,6 @@ INSERT INTO `achievements` (`id`, `title`, `event`, `year`, `prize`, `level`, `d
 (2, 'Cupid\'s Pitch for Ecotopia', 'Ecotopia: Al-driven platform democratizing green building', '2023', 'Second Prize', 'State Level', 'Awarded second prize for pitching an AI-driven platform idea focused on green building practices.', 2),
 (3, 'SHE HACK', 'Idea Pitching Competition', '2024', 'Second Prize', 'State Level', 'Recognized for \'From Silo to Secure: Bridging the Gap in Data Security\' idea.', 3),
 (4, 'KREEPA Green Power Expo 2024', 'Hydrogen Safety, Reimagined', '2024', 'Third Prize', 'State Level', 'Won third prize for using Digital Twin Technology to reimagine Hydrogen Safety.', 4),
-(5, 'Pragati-Business Plan Competition', 'National Level Competition', '2025', 'Shortlisted', 'National Level', 'Shortlisted for the final rounds of the prestigious Pragati Business Plan Competition.', 5),
 (6, 'Shastra Tech Event, Hackathon', 'State Level Hackathon', '2025', 'Third Prize', 'State Level', 'Secured third prize in a competitive state-level hackathon.', 6),
 (7, 'Yukthi Innovation Challenge', 'National Level Innovation Challenge', 'Ongoing', 'Shortlisted', 'National Level', 'Recognized and shortlisted for the Yukthi Innovation Challenge.', 7)
 ON DUPLICATE KEY UPDATE `title` = VALUES(`title`);
@@ -175,8 +156,6 @@ INSERT INTO `achievement_images` (`achievement_id`, `image_url`, `display_order`
 (4, '/achievements/kreepa-1.jpeg', 1),
 (4, '/achievements/kreepa-2.jpeg', 2),
 (4, '/achievements/kreepa-3.jpeg', 3),
-(5, '/achievements/pragati_1.png', 1),
-(5, '/achievements/pragati_2.jpeg', 2),
 (6, '/achievements/sasthra-1.png', 1),
 (6, '/achievements/sasthra-2.jpeg', 2),
 (6, '/achievements/sasthra-3.jpeg', 3),
@@ -221,7 +200,7 @@ INSERT INTO `articles` (`id`, `title`, `slug`, `summary`, `content`, `image`, `p
  'Exploring hydrogen\'s role in the clean energy transition and how digital twin technology is revolutionizing safety protocols.',
  '<p>Hydrogen is emerging as a key clean energy carrier due to its high energy density and zero-emission combustion. However, its high volatility and leakage risks demand advanced safety mechanisms to enable large-scale adoption.</p>',
  'https://www.bloomenergy.com/wp-content/uploads/hydrogen-blog-2024.jpg', 'Nov 10, 2025', 1)
-ON DUPLICATE KEY UPDATE `title` = VALUES(`title`);
+ON DUPLICATE KEY UPDATE `title` = VALUES(`title`), `content` = VALUES(`content`);
 
 INSERT INTO `article_tags` (`article_id`, `tag`) VALUES
 (1, 'Quantum Computing'), (1, 'Neuroscience'), (1, 'Future Tech'),
@@ -275,3 +254,8 @@ INSERT INTO `site_settings` (`setting_key`, `setting_value`) VALUES
 ('instagram_url', 'https://instagram.com/navaneetha_jose'),
 ('footer_text', 'BUILT OF 0s AND 1s. ALL RIGHTS RESERVED.')
 ON DUPLICATE KEY UPDATE `setting_value` = VALUES(`setting_value`);
+
+-- 10. Sample Contact Submission
+INSERT INTO `contact_submissions` (`id`, `name`, `email`, `subject`, `message`, `is_read`)
+VALUES (1, 'Sarah Chen', 'sarah.chen@techcorp.io', 'Project Collaboration Inquiry', 'Hello Navaneetha, I reviewed your work on Wattrix and SkyLooms. Would love to discuss a potential collaboration.', 0)
+ON DUPLICATE KEY UPDATE `name` = VALUES(`name`);

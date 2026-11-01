@@ -70,7 +70,7 @@ run_test("BCRYPT Password Hash Verification", function () {
     assert(password_verify("WrongPassword", $hash) === false, "password_verify must reject incorrect password");
 
     // Test seed hash
-    $seedHash = '$2y$10$wT5gWd992e59y2t53i84g.xMh/631/iA4sV2wWkZz2m7mQ5JdE3eC';
+    $seedHash = '$2y$12$UmsUTKjGEZEZ1C/nRyyJM.ojO0u4vLMJNrxM5f0OQu7EdPN6luM0u';
     assert(password_verify('Admin@12345', $seedHash) === true, "Seed admin hash must match default credentials");
 });
 

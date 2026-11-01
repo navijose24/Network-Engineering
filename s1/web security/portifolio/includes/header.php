@@ -34,7 +34,7 @@ $statusBadge = $settings['status_badge'] ?? 'SYSTEM: ONLINE // ACCEPTING CONTRAC
     <header class="site-header">
         <div class="container header-inner">
             <a href="/#hero" class="brand-logo" aria-label="Home">
-                <span class="brand-text">tob.zico</span>
+                <span class="brand-text">navaneetha</span>
                 <span class="brand-tag">0x01</span>
             </a>
 
@@ -46,8 +46,7 @@ $statusBadge = $settings['status_badge'] ?? 'SYSTEM: ONLINE // ACCEPTING CONTRAC
                     <li class="nav-item"><a href="/#achievements"><span class="index">04.</span> Honors</a></li>
                     <li class="nav-item"><a href="/#talks"><span class="index">05.</span> Talks</a></li>
                     <li class="nav-item"><a href="/#articles"><span class="index">06.</span> Writing</a></li>
-                    <li class="nav-item"><a href="/#creative"><span class="index">07.</span> Lab</a></li>
-                    <li class="nav-item"><a href="/#contact"><span class="index">08.</span> Contact</a></li>
+                    <li class="nav-item"><a href="/#contact"><span class="index">07.</span> Contact</a></li>
                 </ul>
             </nav>
 
@@ -56,9 +55,6 @@ $statusBadge = $settings['status_badge'] ?? 'SYSTEM: ONLINE // ACCEPTING CONTRAC
                     <span class="live-indicator"></span>
                     <span class="mono-data">SYS.LIVE</span>
                 </div>
-                <a href="/admin/login.php" class="btn btn-secondary btn-sm" title="Restricted Admin Gateway">
-                    [ADMIN]
-                </a>
                 <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
                     [MENU // 01]
                 </button>

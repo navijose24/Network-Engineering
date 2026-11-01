@@ -53,19 +53,7 @@ $skillsGrouped = get_skills_grouped();
 $achievements = get_achievements_list();
 $talks = get_talks_list();
 $articles = get_articles_list(true, 6);
-$creativeWorks = get_creative_works_list();
 $settings = get_site_settings();
-
-// Extract book and gallery items
-$bookWork = null;
-$galleryWorks = [];
-foreach ($creativeWorks as $cw) {
-    if ($cw['work_type'] === 'book' && !$bookWork) {
-        $bookWork = $cw;
-    } else {
-        $galleryWorks[] = $cw;
-    }
-}
 
 require_once __DIR__ . '/includes/header.php';
 ?>
@@ -95,7 +83,7 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
 
                 <h1 class="hero-title" data-scramble>
-                    FRONT DESK, <span class="highlight">REBUILT.</span>
+                    Navaneetha Jose,<span class="highlight"></span>
                 </h1>
 
                 <p class="hero-bio">
@@ -113,16 +101,16 @@ require_once __DIR__ . '/includes/header.php';
 
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <span class="stat-num"><?= count($projects) > 0 ? count($projects) : '11' ?>+</span>
+                        <span class="stat-num"><?= count($projects) > 0 ? count($projects) : '8' ?>+</span>
                         <span class="stat-label">Systems Shipped</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-num"><?= count($achievements) > 0 ? count($achievements) : '7' ?>+</span>
+                        <span class="stat-num"><?= count($achievements) > 0 ? count($achievements) : '6' ?>+</span>
                         <span class="stat-label">Honors Won</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-num"><?= count($articles) > 0 ? count($articles) : '6' ?>+</span>
-                        <span class="stat-label">Technical Papers</span>
+                        <span class="stat-label">Technical Blogs</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-num">100%</span>
@@ -142,6 +130,9 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="pixel-avatar-wrap">
                     <?php if (!empty($profile['avatar']) && file_exists(__DIR__ . $profile['avatar'])): ?>
                         <img src="<?= e($profile['avatar']) ?>" alt="<?= e($profile['name']) ?>" class="pixel-avatar-img">
+                        <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(15,15,16,0.85); border: 1px solid var(--clr-terracotta); font-family: var(--font-pixel); font-size: 0.65rem; color: var(--clr-sand); padding: 3px 8px; letter-spacing: 0.05em; pointer-events: none;">
+                            [ ^ _ ^ ] PIXEL HUMAN
+                        </div>
                     <?php else: ?>
                         <!-- Brutalist Pixel Graphic Avatar representation matching brand identity board -->
                         <div class="pixel-avatar-fallback">
@@ -451,106 +442,12 @@ require_once __DIR__ . '/includes/header.php';
 </section>
 
 <!-- ==========================================
-     CREATIVE LAB (LINES & LAYERS)
-     ========================================== -->
-<section id="creative" class="creative-section">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-subtitle">[07 // 0111] // LINES &amp; LAYERS</span>
-            <h2 class="section-title" data-scramble>EXPERIMENTAL &amp; VISUAL LAB</h2>
-        </div>
-
-        <div class="creative-grid">
-            <!-- Book Reader: Y SHE Y -->
-            <div class="book-reader cut-corner">
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--clr-stone); padding-bottom: 12px;">
-                    <span style="font-family: var(--font-pixel); font-size: 1.1rem; color: var(--clr-sand);">
-                        <?= e($bookWork['title'] ?? 'Y SHE Y') ?>
-                    </span>
-                    <span id="book-page-label" class="mono-data" style="color: var(--clr-terracotta); font-size: 0.8rem;">
-                        [PAGE: 01 / 08]
-                    </span>
-                </div>
-
-                <div class="book-viewport">
-                    <?php
-                    $bookPages = [];
-                    if (!empty($bookWork['images'])) {
-                        foreach ($bookWork['images'] as $img) {
-                            $bookPages[] = $img['image_url'];
-                        }
-                    }
-                    if (empty($bookPages)) {
-                        $bookPages = [
-                            '/Life/y sheshe y/2.png',
-                            '/Life/y sheshe y/3.png',
-                            '/Life/y sheshe y/4.png',
-                            '/Life/y sheshe y/5.png',
-                            '/Life/y sheshe y/6.png',
-                            '/Life/y sheshe y/7.png',
-                            '/Life/y sheshe y/8.png',
-                            '/Life/y sheshe y/9.png'
-                        ];
-                    }
-                    $firstPage = $bookPages[0] ?? '/Life/y sheshe y.png';
-                    ?>
-                    <img id="book-current-page" 
-                         src="<?= e($firstPage) ?>" 
-                         alt="Y SHE Y Book Page" 
-                         class="book-page-img"
-                         data-pages='<?= json_encode($bookPages) ?>'
-                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    
-                    <div style="display: none; padding: 20px; text-align: center; font-family: var(--font-mono); color: var(--clr-stone);">
-                        [Y SHE Y // VISUAL ESSAY LOADED]<br>
-                        <span style="color: var(--clr-terracotta); font-size: 0.85rem;">Interactive philosophy and spatial sketches</span>
-                    </div>
-                </div>
-
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <button id="book-prev-btn" class="btn btn-secondary btn-sm">&larr; PREVIOUS</button>
-                    <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--clr-stone);">FLIP SHEET</span>
-                    <button id="book-next-btn" class="btn btn-primary btn-sm">NEXT &rarr;</button>
-                </div>
-            </div>
-
-            <!-- Gallery Works -->
-            <div>
-                <h3 style="font-size: 1.25rem; margin-bottom: 8px; color: var(--clr-sand);">Visual Fragments &amp; Works</h3>
-                <p style="font-size: 0.9rem; color: var(--clr-stone); margin-bottom: 20px;">
-                    Photographic abstractions, contrast geometries, and conceptual explorations.
-                </p>
-
-                <div class="gallery-grid">
-                    <?php 
-                    $arts = [
-                        ['title' => 'Flicker', 'img' => '/Life/2.png'],
-                        ['title' => 'Remnant', 'img' => '/Life/3.png'],
-                        ['title' => 'Aperture', 'img' => '/Life/4.png'],
-                        ['title' => 'Lethe', 'img' => '/Life/5.png'],
-                        ['title' => 'Echo', 'img' => '/Life/6.png'],
-                        ['title' => 'Imprint', 'img' => '/Life/7.png'],
-                        ['title' => 'Is', 'img' => '/Life/8.png'],
-                        ['title' => 'The Answer', 'img' => '/Life/1.png']
-                    ];
-                    foreach ($arts as $item): ?>
-                        <div class="gallery-thumb" title="<?= e($item['title']) ?>">
-                            <img src="<?= e($item['img']) ?>" alt="<?= e($item['title']) ?>" loading="lazy" onerror="this.parentElement.innerHTML='<span style=\'font-family:var(--font-mono);font-size:0.75rem;padding:6px;\'><?= e($item['title']) ?></span>'">
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==========================================
      CONTACT TRANSMISSION TERMINAL
      ========================================== -->
 <section id="contact">
     <div class="container">
         <div class="section-header">
-            <span class="section-subtitle">[08 // 1000] // DIRECT GATEWAY</span>
+            <span class="section-subtitle">[07 // 0111] // DIRECT GATEWAY</span>
             <h2 class="section-title" data-scramble>DISPATCH TRANSMISSION</h2>
         </div>
 

@@ -148,45 +148,6 @@ export const projects = [
         video: "/project/medialert.mp4",
         github: null,
         link: "/project/medialert.mp4"
-    },
-    {
-        id: 7,
-        title: "SEO-analyser",
-        subtitle: "SEO Quality Analysis Tool",
-        description: "An SEO Analyzer is a tool that checks your website or webpage for Search Engine Optimization (SEO) quality—helping you understand how well your content will rank in search engines like Google.",
-        detailedDescription: "The SEO Analyser is a comprehensive web tool designed to audit websites for search engine optimization best practices. It parses HTML content to check for critical elements like meta tags, alt attributes, heading hierarchies, and broken links. The tool provides a detailed score and actionable recommendations to improve page ranking. built with vanilla JavaScript for speed and efficiency, it offers instant feedback to developers and content creators.",
-        tech: ["JavaScript", "HTML", "CSS"],
-        image: "/project-seo.jpg",
-        category: "Web Development",
-        video: null,
-        github: "https://github.com/navijose24/SEO-analyser",
-        link: "https://github.com/navijose24/SEO-analyser"
-    },
-    {
-        id: 8,
-        title: "park-voting-system",
-        subtitle: "Park Information Management System",
-        description: "A Python-based system for extracting and managing park information from HTML sources. This project processes park data and converts it into a structured JSON format for further use in a voting system.",
-        detailedDescription: "This system automates the extraction and structuring of unstructured park data from various web sources. Using Python's scraping libraries, it aggregates information such as park amenities, location, and user reviews. The data is then normalized and exported as structured JSON, which serves as the backend database for a community voting application. This project streamlines data entry and ensures accuracy for user-driven platforms.",
-        tech: ["Python", "HTML", "JSON"],
-        image: "/project-park.jpg",
-        category: "Web Development",
-        video: null,
-        github: "https://github.com/navijose24/park-voting-system-",
-        link: "https://github.com/navijose24/park-voting-system-"
-    },
-    {
-        id: 9,
-        title: "Flappy Bird Clone",
-        subtitle: "2D Game Development",
-        description: "Created a simple interactive game using Unity with custom physics and responsive controls.",
-        detailedDescription: "A faithful recreation of the classic Flappy Bird game, developed to explore the fundamentals of 2D game physics and input handling in Unity. This project involves custom C# scripting to manage bird mechanics, procedural pipe generation, and collision detection. It features a responsive UI, score tracking, and smooth animations, demonstrating proficiency in the Unity engine and game development logic.",
-        tech: ["Unity", "C#"],
-        image: "/project-game.jpg",
-        category: "Game Dev",
-        video: null,
-        github: "https://github.com/navijose24/Flappy-Bird-Clone",
-        link: "https://github.com/navijose24/Flappy-Bird-Clone"
     }
 ];
 
@@ -205,7 +166,7 @@ export const skills = {
 export const about = {
     name: "Navaneetha Jose",
     tagline: "Developer • Innovator • Solution Architect",
-    intro: "I'm a developer driven by a deep curiosity for how intelligent systems can shape real-world change. My work lies at the intersection of AI, blockchain, and sustainability, where technology becomes a tool for impact—not just innovation.I focus on building systems that are practical, scalable, and future-oriented—from AI-powered waste detection to decentralized energy trading platforms.I believe good engineering is not just about writing efficient code, but about asking the right questions, designing responsibly, and continuously evolving with technology. ",
+    intro: "I'm a developer driven by a deep curiosity for how intelligent systems can shape real-world change.",
     email: "navaneethajose004@gmail.com",
     linkedin: "linkedin.com/in/navaneetha-jose",
     github: "github.com/navijose24",
@@ -304,16 +265,6 @@ export const achievements = [
         level: "State Level",
         description: "Won third prize for using Digital Twin Technology to reimagine Hydrogen Safety.",
         images: ["/achievements/kreepa-1.jpeg", "/achievements/kreepa-2.jpeg", "/achievements/kreepa-3.jpeg"]
-    },
-    {
-        id: 5,
-        title: "Pragati-Business Plan Competition",
-        event: "National Level Competition",
-        year: "2025",
-        prize: "Shortlisted",
-        level: "National Level",
-        description: "Shortlisted for the final rounds of the prestigious Pragati Business Plan Competition.",
-        images: ["/achievements/pragati_1.png", "/achievements/pragati_2.jpeg"]
     },
     {
         id: 6,
